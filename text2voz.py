@@ -8,6 +8,7 @@ Agradecimiento a https://www.texttomp3.online que no sabe que uso el servicio de
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 import requests
+#from playsound import playsound
 #arreglar import urllib2 es para el GET si hacemos esta listo todo
 
 def tex2file(text, archivo = "Audio"):
@@ -42,4 +43,25 @@ def tex2file(text, archivo = "Audio"):
     except:
         print("Error no podemos realizar la peticion")
 
+#tex2file("Este es un texto de prueba", archivo = "Prueba")
+
 #speechnotes.com/es
+
+#reproducir audio fijo
+#reproducir volatil
+#agregar archivos y convertir en audio
+"""
+from os import path
+from pydub import AudioSegment
+
+# files                                                                         
+src = "D:/bolivar test bet/tex2voz/Prueba.mp3"
+dst = "D:/bolivar test bet/tex2voz/Prueba.wav"
+
+# convert wav to mp3                                                            
+sound = AudioSegment.from_mp3(src)
+sound.export(dst, format="wav")
+
+NOMBRE_ARCHIVO = "D:/bolivar test bet/tex2voz/Prueba.mp3"
+playsound(NOMBRE_ARCHIVO)
+"""
