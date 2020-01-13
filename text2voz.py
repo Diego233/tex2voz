@@ -8,6 +8,7 @@ Agradecimiento a https://www.texttomp3.online que no sabe que uso el servicio de
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 import requests
+import time
 #from playsound import playsound
 #arreglar import urllib2 es para el GET si hacemos esta listo todo
 
@@ -43,7 +44,16 @@ def tex2file(text, archivo = "Audio"):
     except:
         print("Error no podemos realizar la peticion")
 
-#tex2file("Este es un texto de prueba", archivo = "Prueba")
+def words2files(archivo):
+    with open(archivo, 'r') as file:
+        for palabra in file:
+            time.sleep(5)
+            tex2file(palabra, str(palabra.replace(' ','_')))
+            print(palabra + 'mp3 creado')
+
+words2files('palabras.txt')
+
+#tex2file("Este es un segndo texto de prueba ", archivo = "Prueba2")
 
 #speechnotes.com/es
 
